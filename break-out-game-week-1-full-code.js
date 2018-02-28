@@ -5,7 +5,7 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
 //Setup other variables for the ball size and position
-var BallRadius = 10;
+var ballRadius = 10;
 var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 2;
@@ -22,7 +22,7 @@ var leftPressed  = false;
 //This function draws the ball on the canvas
 function drawBall() {
     ctx.beginPath();
-    ctx.arc(x, y, BallRadius, 0, Math.PI*2);
+    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
     ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
@@ -47,11 +47,11 @@ function draw() {
    drawPaddle();
 
    //Bounce off the walls 
-   if(x + dx > canvas.width || x + dx <0) {
+   if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
        dx = -dx;
    }
 
-   if(y +dy > canvas.height || y + dy <0) {
+   if(y +dy > canvas.height-ballRadius || y + dy < ballRadius) {
        dy =-dy;
    }
 
@@ -90,7 +90,7 @@ function keyUpHandler(e) {
     if(e.keyCode == 39) {
         rightPressed = false;
     }
-    else if(e.keyCode == 39) {
+    else if(e.keyCode == 37) {
         leftPressed = false;
     }
     
