@@ -56,7 +56,7 @@ function draw() {
 	   //check if the ball is hitting the paddle
 	   if(x > paddleX && x < paddleX + paddleWidth) {
 		   dy = -dy; 
-		dy = dy*2;  
+		  
 	   }
 	   
 	   
