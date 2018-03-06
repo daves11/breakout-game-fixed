@@ -90,7 +90,7 @@ function keyUpHandler(e) {
     if(e.keyCode == 39) {
         rightPressed = false;
     }
-    else if(e.keyCode == 39) {
+    else if(e.keyCode == 37) {
         leftPressed = false;
     }
     
