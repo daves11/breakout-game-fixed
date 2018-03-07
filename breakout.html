@@ -188,6 +188,16 @@ function draw() {
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup" , keyUpHandler, false);
 
+//listener for mouse movement, move the paddle with the mouse
+document.addEventListener("mousemove",mouseMoveHandler, false);
+function mouseMoveHandler(e) {
+	var relativeX = e.clientX - canvas.offsetLeft;
+	if(relativeX > 0 && relativeX < canvas.width) {
+		paddleX = relativeX - paddleWidth/2;
+	}
+}
+
+
 //Define the functions to handle the keyDown or keyUp events
 function keyDownHandler(e) {
     if(e.keyCode == 39) {
